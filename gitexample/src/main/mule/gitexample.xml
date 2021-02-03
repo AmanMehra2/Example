@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="b2c4d2d9-8f14-4da1-9a0d-c714d175ff66" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="gitexampleFlow" doc:id="4f266f19-d9b7-4703-9eea-29067716eeb3" >
+		<http:listener doc:name="Listener" doc:id="f82de2b8-c3b1-4912-8f0f-07fd76d30dce" path="employees" config-ref="HTTP_Listener_config"/>
+		<set-payload value="Employee details" doc:name="Set Payload" doc:id="f0301245-160b-4368-ac39-b4c05ed3d1d7" />
+	</flow>
+</mule>
