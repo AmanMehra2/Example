@@ -11,5 +11,6 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	<flow name="gitexampleFlow" doc:id="4f266f19-d9b7-4703-9eea-29067716eeb3" >
 		<http:listener doc:name="Listener" doc:id="f82de2b8-c3b1-4912-8f0f-07fd76d30dce" path="employees" config-ref="HTTP_Listener_config"/>
 		<set-payload value="Employee details" doc:name="Set Payload" doc:id="f0301245-160b-4368-ac39-b4c05ed3d1d7" />
+		<logger level="INFO" doc:name="Logger" doc:id="fb69e9d6-72cf-405f-9742-ce79b8984e27" message="#[payload]"/>
 	</flow>
 </mule>
